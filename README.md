@@ -2,36 +2,21 @@
 <p align="center">
 <a href="https://arxiv.org/abs/2307.00997"><img src="https://img.shields.io/badge/arXiv-Paper-<color>"></a>
 </p>
-<h5 align="center"><em>Yonglin Li, Jing Zhang, Xiao Teng, Long Lan</em></h5>
+<h5 align="center"><em>Yonglin Li, Jing Zhang, Xiao Teng, Long Lan, Xinwang Liu</em></h5>
 <p align="center">
-  <a href="#news">News</a> |
   <a href="#introduction">Abstract</a> |
   <a href="#usage">Usage</a> |
   <a href="#results">Results</a> |
   <a href="#statement">Statement</a>
 </p>
 
-
-
-
-# News
-
-**2023.07.04**
-
-- The paper is post on arxiv!
-
-<!-- > other news -->
-
-
-
-
 # Introduction
 
 This is the official repository of the paper <a href=""> RefSAM: Efficiently Adapting Segmenting Anything Model for Referring Video Object Segmentation </a>
 
 <figure>
-<img src="Figs/overall_network.png">
-<figcaption align = "center"><b>Figure 1: The overall pipeline of RefSAM. It mainly consists of five key components: Visual Encoder of SAM , Text Encoder, Cross Modal MLP, Dense Attention, Mask Decoder of SAM.
+<img src="Figs/overall_network.jpg">
+<figcaption align = "center"><b>The overall pipeline of RefSAM. It mainly consists of five key components: 1) Backbone: Visual Encoder of SAM with Adapter and Text Encoder; 2) Cross-Modal MLP; 3) Hierarchical Dense Attention; 4) Mask Decoder of SAM; and 5) Implicit Tracking Module.
 </b></figcaption>
 </figure>
 
@@ -39,20 +24,13 @@ This is the official repository of the paper <a href=""> RefSAM: Efficiently Ada
 
 <p align="left"> In this study, we present the RefSAM model, which for the first time explores the potential of <a href="https://arxiv.org/abs/2304.02643"> SAM </a> for RVOS by incorporating multi-view information from diverse modalities and successive frames at different timestamps. Our proposed approach adapts the original SAM model to enhance cross-modality learning by employing a lightweight Cross-Modal MLP that projects the text embedding of the referring expression into sparse and dense embeddings, serving as user-interactive prompts. Subsequently, a parameter-efficient tuning strategy is employed to effectively align and fuse the language and vision features. Through comprehensive ablation studies, we demonstrate the practical and effective design choices of our strategy. Extensive experiments conducted on Ref-Youtu-VOS and Ref-DAVIS17 datasets validate the superiority and effectiveness of our RefSAM model over existing methods.
 
-
-
-
 # Usage
-The code will be released soon.
-
-
-
 
 # Results
 ## Results on RVOS datasets
 
 <figure style="text-align: center;">
-<img src="Figs/Results%20on%20Ref-DAVIS17.png">
+<img src="Figs/ResultsonRef-DAVIS17.png">
 <figcaption align = "center"><b>Figure 2: Results on Ref-DAVIS17. 
  </b></figcaption>
 </figure>
@@ -60,7 +38,7 @@ The code will be released soon.
 <p>
 
 <figure style="text-align: center;">
-<img src="Figs/Results on Ref-Youtube-VOS.jpeg">
+<img src="Figs/Results on Ref-Youtube-VOS.png">
 <figcaption align = "center"><b>Figure 3: Results on Ref-Youtube-VOS. 
  </b></figcaption>
 </figure>
@@ -107,18 +85,15 @@ Furthermore, we present the results of differnt models. It is clear that our Ref
 ### The influence of different learning rates for the learnable modules
 
 <figure>
-<img src="Figs/The influence of different learning rates for the learnable modules of RefSAM.png">
+<img src="Figs/Ablation study of different module designs.png">
 <figcaption align = "center"><b>Figure 6: The influence of different learning rates for the learnable modules of RefSAM.</a>  
  </b></figcaption>
 </figure>
 
-
-
-
 ### Ablation study of different module designs.
 
 <figure>
-<img src="Figs/Ablation study of different module designs.png">
+<img src="Figs/Ablation study of different module designs2.png">
 <figcaption align = "center"><b>Figure 7: Ablation study of different module designs.
 </a>  
  </b></figcaption>
@@ -133,7 +108,7 @@ Furthermore, we present the results of differnt models. It is clear that our Ref
 
 
 <figure style="text-align: center;">
-<img src="Figs/Ablation%20study%20of%20the%20key%20compoents%20of%20RefSAM.png">
+<img src="Figs/AblationstudyofthekeycompoentsofRefSAM.png">
 <figcaption align = "center"><b>Figure 8: Ablation study of the key compoents of RefSAM</a>  
  </b></figcaption>
 </figure>
@@ -145,7 +120,7 @@ Furthermore, we present the results of differnt models. It is clear that our Ref
 
 <figure style="text-align: center;">
 <img src="Figs/Influence of the model size of Visual Encoder.png">
-<figcaption align = "center"><b>Figure 9: Influence of the model size of Visual Encoder. We do not use the data augmentation in this experiment. </a>  
+<figcaption align = "center"><b>Figure 9: Influence of the model size of Visual Encoder. </a>  
  </b></figcaption>
 </figure>
 
@@ -166,7 +141,7 @@ Furthermore, we present the results of differnt models. It is clear that our Ref
 ### Inference speed of different models.
 
 <figure style="text-align: center;">
-<img src="Figs/Inference%20speed%20of%20different%20models..png">
+<img src="Figs/Inferencespeedofdifferentmodels.png">
 <figcaption align = "center"><b>Figure 11: Inference speed of different models.</a>  
  </b></figcaption>
 </figure>
